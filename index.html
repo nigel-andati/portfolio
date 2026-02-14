@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Italianno&family=Quicksand:wght@300..700&display=swap" rel="stylesheet"/>
+  <title>Nigel Andati | Portfolio</title>
+  <meta name="description" content="Portfolio of Nigel Andati. Explore my projects, skills, experience, and get in touch."/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body class="antialiased">
+  <div id="page" class="page-container">
+    <!-- Navigation -->
+    <nav class="nav">
+      <p class="nav-logo">Nigel Andati</p>
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link" data-i18n="nav-home">Home</a></li>
+        <li><a href="#projects" class="nav-link" data-i18n="nav-projects">Projects</a></li>
+        <li><a href="#skills" class="nav-link" data-i18n="nav-skills">Skills</a></li>
+        <li><a href="#experience" class="nav-link" data-i18n="nav-experience">Experience</a></li>
+        <li><a href="#education" class="nav-link" data-i18n="nav-education">Education</a></li>
+        <li><a href="#contact" class="nav-link" data-i18n="nav-contact">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="lang-toggle" role="group" aria-label="Language selection">
+          <button id="lang-en" class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
+          <button id="lang-zh" class="lang-btn" data-lang="zh" aria-pressed="false">中文</button>
+        </div>
+        <a href="Nigel_Andati_Resume.pdf" target="_blank" rel="noopener noreferrer" class="nav-resume homebutton" data-i18n="nav-resume">Resume</a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="main">
+      <section id="home" class="hero section">
+        <div class="hero-content">
+          <div class="hero-image-wrapper">
+            <img 
+              alt="Nigel Andati" 
+              class="hero-image" 
+              src="profile.png" 
+            />
+          </div>
+          <div class="hero-text">
+            <h1 class="hero-name">Nigel Andati</h1>
+            <p class="hero-intro" data-i18n="hero-intro">
+              I'm a passionate developer and creative problem-solver. I enjoy building software that makes a difference and exploring new technologies to create innovative solutions.
+            </p>
+            <div class="hero-buttons">
+              <a href="#contact" class="homebutton" data-i18n="hero-cta">Get in Touch</a>
+              <a href="Nigel_Andati_Resume.pdf" target="_blank" rel="noopener noreferrer" class="homebutton homebutton-outline" data-i18n="nav-resume">Resume</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section id="experience" class="section experience-section">
+        <h2 class="section-title" data-i18n="section-experience">Experience</h2>
+        <div class="experience-list">
+          <article class="experience-item" data-animate>
+            <div class="experience-date">
+              <span class="experience-date-text" data-i18n="exp1-date">2024 — Present</span>
+            </div>
+            <div class="experience-content">
+              <h3 class="experience-title" data-i18n="exp1-title">IT Office Software Developer</h3>
+              <p class="experience-company" data-i18n="exp1-company">Duke Kunshan University</p>
+              <p class="experience-desc" data-i18n="exp1-desc">
+                Develop and maintain campus technologies including the library's textbook reservation and ordering software, custom applications for student clubs, and physical computing machines. Maintain campus computing infrastructure with 99.9% uptime through security patching and hardware troubleshooting. Ensure database integrity for library acquisitions and synchronization.
+              </p>
+            </div>
+          </article>
+          <article class="experience-item" data-animate>
+            <div class="experience-date">
+              <span class="experience-date-text" data-i18n="exp2-date">Apr 2022 — Aug 2022</span>
+            </div>
+            <div class="experience-content">
+              <h3 class="experience-title" data-i18n="exp2-title">Corporate Analyst Intern</h3>
+              <p class="experience-company" data-i18n="exp2-company">Equity Group Foundation</p>
+              <p class="experience-desc" data-i18n="exp2-desc">
+                Built Python automation scripts for monthly portfolio reporting, reducing manual data processing time by 30%. Optimized data extraction using SQL queries and Excel macros to identify financial trends. Developed interactive dashboards to visualize KPIs for data-driven decision-making.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" class="section skills-section">
+        <h2 class="section-title" data-i18n="section-skills">Skills</h2>
+        <div class="skills-marquee-wrapper">
+          <div class="skills-marquee">
+            <div class="skill-item">
+              <span class="skill-icon">JS</span>
+              <span class="skill-name">JavaScript</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-icon">⚛</span>
+              <span class="skill-name">React</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-icon">▲</span>
+              <span class="skill-name">Node.js</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-icon">🐍</span>
+              <span class="skill-name">Python</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-icon">☕</span>
+              <span class="skill-name">Java</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-icon">C++</span>
+              <span class="skill-name">C++</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-icon">🔥</span>
+              <span class="skill-name">PyTorch</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-icon">🤗</span>
+              <span class="skill-name">HuggingFace</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-icon">CSS</span>
+              <span class="skill-name">Tailwind CSS</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-icon">☁</span>
+              <span class="skill-name">AWS</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-icon">🐳</span>
+              <span class="skill-name">Docker</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-icon">⚙</span>
+              <span class="skill-name">Git</span>
+            </div>
+            <!-- Duplicate for seamless loop -->
+            <div class="skill-item">
+              <span class="skill-icon">JS</span>
+              <span class="skill-name">JavaScript</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-icon">⚛</span>
+              <span class="skill-name">React</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-icon">▲</span>
+              <span class="skill-name">Node.js</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-icon">🐍</span>
+              <span class="skill-name">Python</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-icon">☕</span>
+              <span class="skill-name">Java</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="section projects-section">
+        <h2 class="section-title" data-i18n="section-projects">Projects</h2>
+        <div class="projects-grid">
+          <article class="project-card" data-animate>
+            <div class="project-image-wrapper">
+              <img 
+                alt="Semantic Book Recommender" 
+                class="project-image" 
+                src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=250&fit=crop" 
+              />
+            </div>
+            <div class="project-content">
+              <h3 class="project-title" data-i18n="proj1-title">Semantic Book Recommender</h3>
+              <p class="project-date" data-i18n="proj1-date">2024</p>
+              <p class="project-desc" data-i18n="proj1-desc">
+                Developed a RAG-based discovery engine using OpenAI and vector search, integrating zero-shot classification and sentiment analysis to categorize 7,000+ books and improve recommendation precision by 30%.
+              </p>
+              <a href="https://github.com/nigel-andati" target="_blank" rel="noopener noreferrer" class="homebutton project-btn" data-i18n="proj-view">View Project</a>
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">LangChain</span>
+                <span class="tag">OpenAI</span>
+                <span class="tag">ChromaDB</span>
+              </div>
+            </div>
+          </article>
+          <article class="project-card" data-animate>
+            <div class="project-image-wrapper">
+              <img 
+                alt="EchoThread" 
+                class="project-image" 
+                src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=250&fit=crop" 
+              />
+            </div>
+            <div class="project-content">
+              <h3 class="project-title" data-i18n="proj2-title">EchoThread</h3>
+              <p class="project-date" data-i18n="proj2-date">2024</p>
+              <p class="project-desc" data-i18n="proj2-desc">
+                Built a responsive forum with real-time features and a custom REST API, improving rendering speeds by 40% and ensuring 99.9% reliability during high-traffic testing of 1,000+ concurrent requests.
+              </p>
+              <a href="https://github.com/nigel-andati/EchoThread" target="_blank" rel="noopener noreferrer" class="homebutton project-btn" data-i18n="proj-view">View Project</a>
+              <div class="project-tags">
+                <span class="tag">React</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">Tailwind CSS</span>
+                <span class="tag">REST API</span>
+              </div>
+            </div>
+          </article>
+          <article class="project-card" data-animate>
+            <div class="project-image-wrapper">
+              <img 
+                alt="Campus & Community Hub" 
+                class="project-image" 
+                src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=400&h=250&fit=crop" 
+              />
+            </div>
+            <div class="project-content">
+              <h3 class="project-title" data-i18n="proj3-title">Campus & Community Hub</h3>
+              <p class="project-date" data-i18n="proj3-date">Ongoing</p>
+              <p class="project-desc" data-i18n="proj3-desc">
+                Developed and deployed an official university website for tracking campus cats, enabling community reporting of sightings and complaints with an admin-only CMS to securely manage cat profiles and images.
+              </p>
+              <div class="project-btn-spacer" aria-hidden="true"></div>
+              <div class="project-tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Netlify</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Education Section -->
+      <section id="education" class="section education-section">
+        <h2 class="section-title" data-i18n="section-education">Education</h2>
+        <div class="education-list">
+          <article class="education-item" data-animate>
+            <div class="education-icon">🎓</div>
+            <div class="education-content">
+              <h3 class="education-school" data-i18n="edu1-school">Duke University</h3>
+              <p class="education-degree" data-i18n="edu1-degree">Bachelor of Science, Computer Science</p>
+              <p class="education-year" data-i18n="edu1-year">2024 — 2028</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="section contact-section">
+        <h2 class="section-title" data-i18n="section-contact">Let's Connect!</h2>
+        <div class="contact-content">
+          <div class="contact-info">
+            <a href="mailto:nigelandati@gmail.com" class="contact-item" data-animate>
+              <span class="contact-icon">✉</span>
+              <span class="contact-text">nigelandati@gmail.com</span>
+            </a>
+            <a href="mailto:noa3@duke.edu" class="contact-item" data-animate>
+              <span class="contact-icon">✉</span>
+              <span class="contact-text">noa3@duke.edu</span>
+            </a>
+            <div class="contact-item" data-animate>
+              <span class="contact-icon">📍</span>
+              <span class="contact-text" data-i18n="contact-location">Shanghai, China</span>
+            </div>
+          </div>
+          <div class="contact-social">
+            <a href="https://linkedin.com/in/nigel-andati" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="https://github.com/nigel-andati" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+            <a href="https://instagram.com/_just.nigel_" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="wave-container">
+          <svg class="wave-svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+            <path fill-opacity="0.4" d="M0,200 C480,250 960,50 1440,200 L1440,320 L0,320 Z"></path>
+            <path fill-opacity="0.6" d="M0,220 C480,100 960,270 1440,220 L1440,320 L0,320 Z"></path>
+            <path fill-opacity="1" d="M0,240 C360,350 1080,140 1440,260 L1440,320 L0,320 Z"></path>
+          </svg>
+        </div>
+        <p class="footer-text">© <span id="current-year"></span> Nigel Andati. <span data-i18n="footer-rights">All rights reserved.</span></p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
