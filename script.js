@@ -1,9 +1,8 @@
 /**
  * Nigel Andati - Portfolio
- * Language toggle, scroll animations, and dynamic content
+ * i18n, reveal animations, and subtle scene parallax.
  */
 
-// ========== i18n Translations ==========
 const translations = {
   en: {
     'nav-home': 'Home',
@@ -85,21 +84,19 @@ const translations = {
   },
 };
 
-// ========== State ==========
 let currentLang = localStorage.getItem('portfolio-lang') || 'en';
 
-// ========== Language Toggle ==========
 function initLanguageToggle() {
   const btnEn = document.getElementById('lang-en');
   const btnZh = document.getElementById('lang-zh');
-
   if (!btnEn || !btnZh) return;
 
   function setActiveButton(lang) {
-    btnEn.classList.toggle('active', lang === 'en');
-    btnZh.classList.toggle('active', lang === 'zh');
-    btnEn.setAttribute('aria-pressed', lang === 'en');
-    btnZh.setAttribute('aria-pressed', lang === 'zh');
+    const isEn = lang === 'en';
+    btnEn.classList.toggle('active', isEn);
+    btnZh.classList.toggle('active', !isEn);
+    btnEn.setAttribute('aria-pressed', String(isEn));
+    btnZh.setAttribute('aria-pressed', String(!isEn));
   }
 
   btnEn.addEventListener('click', () => {
@@ -128,82 +125,95 @@ function updateContent() {
       el.textContent = t[key];
     }
   });
-
-  // Update html lang for accessibility
   document.documentElement.lang = currentLang === 'zh' ? 'zh-CN' : 'en';
 }
 
-// ========== Scroll Animations ==========
 function initScrollAnimations() {
+  const animatedElements = document.querySelectorAll('[data-animate]');
+  if (!animatedElements.length) return;
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    animatedElements.forEach((el) => el.classList.add('visible'));
+    return;
+  }
+
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
         }
       });
     },
     {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px',
+      threshold: 0.14,
+      rootMargin: '0px 0px -36px 0px',
     }
   );
 
-  document.querySelectorAll('[data-animate]').forEach((el) => {
-    observer.observe(el);
-  });
+  animatedElements.forEach((el) => observer.observe(el));
 }
 
-// ========== Dynamic Year ==========
 function setCurrentYear() {
   const yearEl = document.getElementById('current-year');
-  if (yearEl) {
-    yearEl.textContent = new Date().getFullYear();
-  }
+  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 }
 
-// ========== Smooth Scroll for Nav Links ==========
 function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', (e) => {
       const href = anchor.getAttribute('href');
-      if (href === '#') return;
-      e.preventDefault();
+      if (!href || href === '#') return;
       const target = document.querySelector(href);
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
 }
 
-// ========== Typing Effect (Optional - for hero intro) ==========
-function initTypingEffect() {
-  const introEl = document.querySelector('.hero-intro');
-  if (!introEl || !introEl.getAttribute('data-i18n')) return;
+function initSceneParallax() {
+  const earthLayer = document.getElementById('earth-layer');
+  if (!earthLayer) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  // Simple fade-in is enough; typing can be added later if desired
-  introEl.style.opacity = '1';
-}
+  let pointerX = 0;
+  let pointerY = 0;
+  let latestScroll = 0;
+  let ticking = false;
 
-// ========== Parallax on Scroll (subtle) ==========
-function initParallax() {
-  const heroImage = document.querySelector('.hero-image');
-  if (!heroImage) return;
+  const update = () => {
+    ticking = false;
+    const xShift = pointerX * 0.02;
+    const yShift = pointerY * 0.014 - Math.min(latestScroll * 0.03, 32);
+    earthLayer.style.transform = `translate3d(${xShift}px, calc(-50% + ${yShift}px), 0)`;
+  };
+
+  const queueUpdate = () => {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(update);
+  };
+
+  window.addEventListener('mousemove', (event) => {
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
+    pointerX = event.clientX - centerX;
+    pointerY = event.clientY - centerY;
+    queueUpdate();
+  }, { passive: true });
 
   window.addEventListener('scroll', () => {
-    const scrolled = window.scrollY;
-    const rate = scrolled * 0.05;
-    heroImage.style.transform = `translateY(${Math.min(rate, 20)}px) scale(1)`;
+    latestScroll = window.scrollY;
+    queueUpdate();
   }, { passive: true });
 }
 
-// ========== Initialize ==========
 document.addEventListener('DOMContentLoaded', () => {
   initLanguageToggle();
   initScrollAnimations();
-  setCurrentYear();
   initSmoothScroll();
-  initTypingEffect();
-  // initParallax(); // Uncomment for subtle parallax on hero image
+  initSceneParallax();
+  setCurrentYear();
 });

@@ -5,14 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Italianno&family=Quicksand:wght@300..700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet"/>
   <title>Nigel Andati | Portfolio</title>
   <meta name="description" content="Portfolio of Nigel Andati. Explore my projects, skills, experience, and get in touch."/>
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body class="antialiased">
+  <div class="bg-scene" aria-hidden="true">
+    <div class="bg-stars"></div>
+    <div class="bg-glow"></div>
+    <div class="earth-layer" id="earth-layer">
+      <div class="earth-globe"></div>
+    </div>
+  </div>
+
   <div id="page" class="page-container">
-    <!-- Navigation -->
     <nav class="nav">
       <p class="nav-logo">Nigel Andati</p>
       <ul class="nav-links">
@@ -32,23 +39,18 @@
       </div>
     </nav>
 
-    <!-- Hero Section -->
     <main class="main">
       <section id="home" class="hero section">
         <div class="hero-content">
-          <div class="hero-image-wrapper">
-            <img 
-              alt="Nigel Andati" 
-              class="hero-image" 
-              src="profile.png" 
-            />
+          <div class="hero-image-wrapper" data-animate>
+            <img alt="Nigel Andati" class="hero-image" src="profile.png"/>
           </div>
           <div class="hero-text">
-            <h1 class="hero-name">Nigel Andati</h1>
-            <p class="hero-intro" data-i18n="hero-intro">
+            <h1 class="hero-name" data-animate>Nigel Andati</h1>
+            <p class="hero-intro" data-i18n="hero-intro" data-animate>
               I'm a passionate developer and creative problem-solver. I enjoy building software that makes a difference and exploring new technologies to create innovative solutions.
             </p>
-            <div class="hero-buttons">
+            <div class="hero-buttons" data-animate>
               <a href="#contact" class="homebutton" data-i18n="hero-cta">Get in Touch</a>
               <a href="Nigel_Andati_Resume.pdf" target="_blank" rel="noopener noreferrer" class="homebutton homebutton-outline" data-i18n="nav-resume">Resume</a>
             </div>
@@ -56,7 +58,6 @@
         </div>
       </section>
 
-      <!-- Experience Section -->
       <section id="experience" class="section experience-section">
         <h2 class="section-title" data-i18n="section-experience">Experience</h2>
         <div class="experience-list">
@@ -87,95 +88,37 @@
         </div>
       </section>
 
-      <!-- Skills Section -->
       <section id="skills" class="section skills-section">
         <h2 class="section-title" data-i18n="section-skills">Skills</h2>
-        <div class="skills-marquee-wrapper">
+        <div class="skills-marquee-wrapper" data-animate>
           <div class="skills-marquee">
-            <div class="skill-item">
-              <span class="skill-icon">JS</span>
-              <span class="skill-name">JavaScript</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-icon">⚛</span>
-              <span class="skill-name">React</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-icon">▲</span>
-              <span class="skill-name">Node.js</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-icon">🐍</span>
-              <span class="skill-name">Python</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-icon">☕</span>
-              <span class="skill-name">Java</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-icon">C++</span>
-              <span class="skill-name">C++</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-icon">🔥</span>
-              <span class="skill-name">PyTorch</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-icon">🤗</span>
-              <span class="skill-name">HuggingFace</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-icon">CSS</span>
-              <span class="skill-name">Tailwind CSS</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-icon">☁</span>
-              <span class="skill-name">AWS</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-icon">🐳</span>
-              <span class="skill-name">Docker</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-icon">⚙</span>
-              <span class="skill-name">Git</span>
-            </div>
-            <!-- Duplicate for seamless loop -->
-            <div class="skill-item">
-              <span class="skill-icon">JS</span>
-              <span class="skill-name">JavaScript</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-icon">⚛</span>
-              <span class="skill-name">React</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-icon">▲</span>
-              <span class="skill-name">Node.js</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-icon">🐍</span>
-              <span class="skill-name">Python</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-icon">☕</span>
-              <span class="skill-name">Java</span>
-            </div>
+            <div class="skill-item"><span class="skill-icon">JS</span><span class="skill-name">JavaScript</span></div>
+            <div class="skill-item"><span class="skill-icon">⚛</span><span class="skill-name">React</span></div>
+            <div class="skill-item"><span class="skill-icon">▲</span><span class="skill-name">Node.js</span></div>
+            <div class="skill-item"><span class="skill-icon">🐍</span><span class="skill-name">Python</span></div>
+            <div class="skill-item"><span class="skill-icon">☕</span><span class="skill-name">Java</span></div>
+            <div class="skill-item"><span class="skill-icon">C++</span><span class="skill-name">C++</span></div>
+            <div class="skill-item"><span class="skill-icon">🔥</span><span class="skill-name">PyTorch</span></div>
+            <div class="skill-item"><span class="skill-icon">🤗</span><span class="skill-name">HuggingFace</span></div>
+            <div class="skill-item"><span class="skill-icon">CSS</span><span class="skill-name">Tailwind CSS</span></div>
+            <div class="skill-item"><span class="skill-icon">☁</span><span class="skill-name">AWS</span></div>
+            <div class="skill-item"><span class="skill-icon">🐳</span><span class="skill-name">Docker</span></div>
+            <div class="skill-item"><span class="skill-icon">⚙</span><span class="skill-name">Git</span></div>
+            <div class="skill-item"><span class="skill-icon">JS</span><span class="skill-name">JavaScript</span></div>
+            <div class="skill-item"><span class="skill-icon">⚛</span><span class="skill-name">React</span></div>
+            <div class="skill-item"><span class="skill-icon">▲</span><span class="skill-name">Node.js</span></div>
+            <div class="skill-item"><span class="skill-icon">🐍</span><span class="skill-name">Python</span></div>
+            <div class="skill-item"><span class="skill-icon">☕</span><span class="skill-name">Java</span></div>
           </div>
         </div>
       </section>
 
-      <!-- Projects Section -->
       <section id="projects" class="section projects-section">
         <h2 class="section-title" data-i18n="section-projects">Projects</h2>
         <div class="projects-grid">
           <article class="project-card" data-animate>
             <div class="project-image-wrapper">
-              <img 
-                alt="Semantic Book Recommender" 
-                class="project-image" 
-                src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=250&fit=crop" 
-              />
+              <img alt="Semantic Book Recommender" class="project-image" src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=250&fit=crop"/>
             </div>
             <div class="project-content">
               <h3 class="project-title" data-i18n="proj1-title">Semantic Book Recommender</h3>
@@ -194,11 +137,7 @@
           </article>
           <article class="project-card" data-animate>
             <div class="project-image-wrapper">
-              <img 
-                alt="EchoThread" 
-                class="project-image" 
-                src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=250&fit=crop" 
-              />
+              <img alt="EchoThread" class="project-image" src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=250&fit=crop"/>
             </div>
             <div class="project-content">
               <h3 class="project-title" data-i18n="proj2-title">EchoThread</h3>
@@ -217,11 +156,7 @@
           </article>
           <article class="project-card" data-animate>
             <div class="project-image-wrapper">
-              <img 
-                alt="Campus & Community Hub" 
-                class="project-image" 
-                src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=400&h=250&fit=crop" 
-              />
+              <img alt="Campus & Community Hub" class="project-image" src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=400&h=250&fit=crop"/>
             </div>
             <div class="project-content">
               <h3 class="project-title" data-i18n="proj3-title">Campus & Community Hub</h3>
@@ -241,7 +176,6 @@
         </div>
       </section>
 
-      <!-- Education Section -->
       <section id="education" class="section education-section">
         <h2 class="section-title" data-i18n="section-education">Education</h2>
         <div class="education-list">
@@ -256,7 +190,6 @@
         </div>
       </section>
 
-      <!-- Contact Section -->
       <section id="contact" class="section contact-section">
         <h2 class="section-title" data-i18n="section-contact">Let's Connect!</h2>
         <div class="contact-content">
@@ -274,7 +207,7 @@
               <span class="contact-text" data-i18n="contact-location">Shanghai, China</span>
             </div>
           </div>
-          <div class="contact-social">
+          <div class="contact-social" data-animate>
             <a href="https://linkedin.com/in/nigel-andati" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
             </a>
@@ -288,16 +221,14 @@
         </div>
       </section>
 
-      <!-- Footer -->
       <footer class="footer">
-        <div class="wave-container">
-          <svg class="wave-svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
-            <path fill-opacity="0.4" d="M0,200 C480,250 960,50 1440,200 L1440,320 L0,320 Z"></path>
-            <path fill-opacity="0.6" d="M0,220 C480,100 960,270 1440,220 L1440,320 L0,320 Z"></path>
-            <path fill-opacity="1" d="M0,240 C360,350 1080,140 1440,260 L1440,320 L0,320 Z"></path>
-          </svg>
+        <div class="footer-divider" aria-hidden="true"></div>
+        <div class="footer-meta">
+          <a class="netlify-badge-link" href="https://www.netlify.com" target="_blank" rel="noopener noreferrer" aria-label="Deploys by Netlify">
+            <img class="netlify-badge" src="https://www.netlify.com/assets/badges/netlify-badge-color-accent.svg" alt="Deploys by Netlify"/>
+          </a>
+          <p class="footer-text">© <span id="current-year"></span> Nigel Andati. <span data-i18n="footer-rights">All rights reserved.</span></p>
         </div>
-        <p class="footer-text">© <span id="current-year"></span> Nigel Andati. <span data-i18n="footer-rights">All rights reserved.</span></p>
       </footer>
     </main>
   </div>
