@@ -4,15 +4,23 @@ import { useInView } from 'react-intersection-observer'
 const skillCategories = [
   {
     title: 'Languages',
-    skills: ['JavaScript', 'Python', 'Java', 'C++', 'TypeScript', 'SQL'],
+    skills: ['Python', 'Java', 'JavaScript/TypeScript', 'C++', 'SQL'],
   },
   {
-    title: 'Frameworks & Libraries',
-    skills: ['React', 'Node.js', 'Tailwind CSS', 'LangChain', 'PyTorch', 'HuggingFace'],
+    title: 'Systems & Data',
+    skills: ['REST APIs', 'System Design', 'PostgreSQL', 'Redis', 'Kafka'],
   },
   {
-    title: 'Tools & Platforms',
-    skills: ['Git', 'Docker', 'AWS', 'Netlify', 'REST APIs', 'ChromaDB'],
+    title: 'Frameworks',
+    skills: ['React', 'Node.js', 'Flask', 'Django', 'PyTorch', 'LangChain'],
+  },
+  {
+    title: 'ML / AI',
+    skills: ['RAG', 'LLMs'],
+  },
+  {
+    title: 'Cloud & DevOps',
+    skills: ['AWS', 'Docker', 'CI/CD', 'Git/GitHub'],
   },
 ]
 
@@ -42,7 +50,7 @@ export default function Skills() {
           <div className="w-10 h-0.5 bg-primary mt-3 mb-12 rounded-full" />
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
           {skillCategories.map((category, catIdx) => (
             <motion.div
               key={category.title}

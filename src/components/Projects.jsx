@@ -12,19 +12,19 @@ const projects = [
     color: 'from-blue-500/10 to-violet-500/10',
   },
   {
+    title: 'Automated Bug Fixing & Feature Generation Engine',
+    year: '2026',
+    description:
+      'Built an autonomous AI agent processing 100K+ token contexts with AST-based repo analysis, improving patch accuracy by ~30% compared to baseline prompting. Implemented parallel benchmarking and test orchestration, evaluating 100+ tasks with automated regression detection and rollback to ensure stable code generation.',
+    tags: ['Python', 'LLMs', 'Docker', 'FastAPI', 'GitHub API'],
+    color: 'from-emerald-500/10 to-cyan-500/10',
+  },
+  {
     title: 'EchoThread',
     year: '2024',
     description:
       'Responsive forum with real-time features and custom REST API. Achieved 40% improvement in rendering speeds and 99.9% reliability with 1,000+ concurrent requests.',
     tags: ['React', 'Node.js', 'Tailwind CSS', 'REST API'],
-    color: 'from-emerald-500/10 to-cyan-500/10',
-  },
-  {
-    title: 'Campus & Community Hub',
-    year: 'Ongoing',
-    description:
-      'University official website for tracking campus cats with community reporting of sightings and admin-only CMS for cat profile management.',
-    tags: ['HTML', 'CSS', 'JavaScript', 'Netlify'],
     color: 'from-amber-500/10 to-rose-500/10',
   },
 ]

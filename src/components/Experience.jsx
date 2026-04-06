@@ -1,8 +1,19 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { FiCode, FiTrendingUp } from 'react-icons/fi'
+import { FiCode, FiCpu, FiTrendingUp } from 'react-icons/fi'
 
 const experiences = [
+  {
+    company: 'PM Accelerator',
+    role: 'AI/ML SWE Intern',
+    dates: 'Mar 2026 — Jun 2026',
+    icon: <FiCpu size={20} />,
+    bullets: [
+      'Developed and optimized machine learning models and pipelines for AI-driven product features.',
+      'Collaborated with cross-functional teams to integrate ML solutions into production environments.',
+      'Conducted data analysis and model evaluation to improve system performance and accuracy.',
+    ],
+  },
   {
     company: 'Duke Kunshan University',
     role: 'IT Office Software Developer',
