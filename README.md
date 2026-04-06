@@ -1,31 +1,16 @@
-# Nigel Andati - Personal Portfolio
+# React + Vite
 
-A modern, responsive portfolio website with English/Chinese language toggle, scroll animations, and a clean dark theme.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Customization
+Currently, two official plugins are available:
 
-### 1. Replace placeholders
-- **Profile image**: Replace the `src` in the hero `<img>` with your photo (e.g. `profile.jpg`)
-- **Contact info**: Update email addresses and location in the Contact section
-- **Social links**: Update `href` values for LinkedIn, GitHub, Twitter in the Contact section
-- **Resume**: Add your resume PDF path to the Resume button `href`
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-### 2. Add your content
-- **Experience**: Edit the experience items in `index.html` and add translations in `script.js` (both `en` and `zh`)
-- **Projects**: Update project titles, descriptions, images, and links
-- **Education**: Add your university and degree details
+## React Compiler
 
-### 3. Project images
-Replace the Unsplash URLs with your own project screenshots. Place images in a `images/` folder and reference them locally.
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Deployment
+## Expanding the ESLint configuration
 
-- **GitHub Pages**: Push to a repo, enable Pages, set source to main branch
-- **Netlify/Vercel**: Drag and drop the folder or connect your repo
-- **Any static host**: Upload `index.html`, `styles.css`, and `script.js`
-
-## Files
-
-- `index.html` - Structure and content
-- `styles.css` - Layout, theme, animations
-- `script.js` - Language toggle, scroll animations, i18n
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
