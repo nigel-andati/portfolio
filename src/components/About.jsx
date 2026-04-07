@@ -16,7 +16,7 @@ export default function About() {
             About Me
           </h2>
           <div className="w-10 h-0.5 bg-primary mx-auto mt-3 mb-8 rounded-full" />
-          <p className="text-gray-500 text-lg leading-relaxed">
+          <p className="text-gray-500 text-lg leading-relaxed text-justify">
             I'm a Computer Science student at Duke University with a passion for
             building impactful software. My interests span across full-stack
             development, artificial intelligence, and machine learning. I love
