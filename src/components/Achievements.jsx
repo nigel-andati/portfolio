@@ -1,20 +1,8 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { FiStar, FiAward, FiTarget } from 'react-icons/fi'
+import { FiTarget } from 'react-icons/fi'
 
 const achievements = [
-  {
-    title: 'Hackathon Finalist',
-    description: 'Top 10 finish at Duke University annual hackathon with an AI-powered campus safety tool.',
-    icon: <FiStar size={22} />,
-    accent: 'bg-amber-50 text-amber-600',
-  },
-  {
-    title: 'Dean\'s List',
-    description: 'Recognized for academic excellence across multiple semesters at Duke University.',
-    icon: <FiAward size={22} />,
-    accent: 'bg-blue-50 text-blue-600',
-  },
   {
     title: 'Open Source Contributor',
     description: 'Active contributor to multiple open-source projects in the AI/ML ecosystem.',
@@ -40,7 +28,7 @@ export default function Achievements() {
           <div className="w-10 h-0.5 bg-primary mt-3 mb-12 rounded-full" />
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-1 gap-6 max-w-md mx-auto">
           {achievements.map((item, idx) => (
             <motion.div
               key={item.title}

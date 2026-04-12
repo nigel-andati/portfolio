@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { FiCode, FiCpu, FiTrendingUp } from 'react-icons/fi'
+import { FiCpu, FiTrendingUp } from 'react-icons/fi'
 
 const experiences = [
   {
@@ -14,18 +14,7 @@ const experiences = [
       'Conducted data analysis and model evaluation to improve system performance and accuracy.',
     ],
   },
-  {
-    company: 'Duke Kunshan University',
-    role: 'IT Office Software Developer',
-    dates: '2024 — Present',
-    icon: <FiCode size={20} />,
-    bullets: [
-      'Develop and maintain campus technologies including library reservation systems, student club applications, and physical computing projects.',
-      'Maintain infrastructure with 99.9% uptime for mission-critical campus services.',
-      'Manage database integrity and optimize query performance across multiple systems.',
-    ],
-  },
-  {
+{
     company: 'Equity Group Foundation',
     role: 'Corporate Analyst Intern',
     dates: 'Apr 2022 — Aug 2022',
