@@ -1,26 +1,22 @@
-import { motion } from 'framer-motion'
+import * as Motion from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 
 const skillCategories = [
   {
     title: 'Languages',
-    skills: ['Python', 'Java', 'JavaScript/TypeScript', 'C++', 'SQL'],
+    skills: ['Python', 'JavaScript', 'TypeScript', 'Java', 'C++', 'SQL'],
   },
   {
-    title: 'Systems & Data',
-    skills: ['REST APIs', 'System Design', 'PostgreSQL', 'Redis', 'Kafka'],
-  },
-  {
-    title: 'Frameworks',
-    skills: ['React', 'Node.js', 'Flask', 'Django', 'PyTorch', 'LangChain'],
-  },
-  {
-    title: 'ML / AI',
-    skills: ['RAG', 'LLMs'],
+    title: 'Infrastructure & Data',
+    skills: ['PostgreSQL', 'Redis', 'REST APIs', 'System Design', 'ChromaDB'],
   },
   {
     title: 'Cloud & DevOps',
-    skills: ['AWS', 'Docker', 'CI/CD', 'Git/GitHub'],
+    skills: ['AWS EC2', 'AWS Lambda', 'AWS S3', 'Docker', 'CI/CD', 'Git/GitHub', 'Linux'],
+  },
+  {
+    title: 'Frameworks & AI',
+    skills: ['React', 'FastAPI', 'Node.js', 'LangChain', 'RAG', 'LLM APIs'],
   },
 ]
 
@@ -39,7 +35,7 @@ export default function Skills() {
   return (
     <section id="skills" className="py-24 bg-surface/50">
       <div className="max-w-6xl mx-auto px-6" ref={ref}>
-        <motion.div
+        <Motion.motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
@@ -48,11 +44,11 @@ export default function Skills() {
             Skills & Qualifications
           </h2>
           <div className="w-10 h-0.5 bg-primary mt-3 mb-12 rounded-full" />
-        </motion.div>
+        </Motion.motion.div>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {skillCategories.map((category, catIdx) => (
-            <motion.div
+            <Motion.motion.div
               key={category.title}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -74,7 +70,7 @@ export default function Skills() {
                   </span>
                 ))}
               </div>
-            </motion.div>
+            </Motion.motion.div>
           ))}
         </div>
       </div>

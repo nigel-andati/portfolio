@@ -1,28 +1,60 @@
-import { motion } from 'framer-motion'
+import * as Motion from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { FiCpu, FiTrendingUp } from 'react-icons/fi'
+import { FiBriefcase, FiCode, FiCpu, FiCreditCard, FiTrendingUp } from 'react-icons/fi'
 
 const experiences = [
   {
-    company: 'PM Accelerator',
-    role: 'AI/ML SWE Intern',
-    dates: 'Mar 2026 — Jun 2026',
-    icon: <FiCpu size={20} />,
+    company: 'Tech Hub Africa LLC',
+    role: 'Software Engineering Intern',
+    dates: 'May 2026 — Present',
+    location: 'Accra, Ghana',
+    icon: <FiCode size={20} />,
     bullets: [
-      'Developed and optimized machine learning models and pipelines for AI-driven product features.',
-      'Collaborated with cross-functional teams to integrate ML solutions into production environments.',
-      'Conducted data analysis and model evaluation to improve system performance and accuracy.',
+      'Built and shipped 5+ production features for AfroEventix using WordPress, JavaScript, and custom REST endpoints, improving page-load performance for 1,000+ monthly users.',
+      'Developed AI-assisted tooling that converted stakeholder requests into scoped architecture proposals across 3+ client projects.',
     ],
   },
-{
+  {
+    company: 'Product Manager Accelerator',
+    role: 'Software Engineer, Startup Engineering Lead',
+    dates: 'Mar 2026 — Present',
+    location: 'Remote / Boston, MA',
+    icon: <FiCpu size={20} />,
+    bullets: [
+      'Led engineering for Heiwa, an AI-powered family OS built with React, Supabase, Gemini, and Firecrawl.',
+      'Owned calendar sync and OAuth integration end-to-end while parsing logistics from flyers and URLs.',
+    ],
+  },
+  {
+    company: 'Nexa Consulting',
+    role: 'Software Engineering Intern',
+    dates: 'May 2025 — Aug 2025',
+    location: 'Nairobi, Kenya',
+    icon: <FiBriefcase size={20} />,
+    bullets: [
+      'Designed Python/FastAPI REST endpoints and PostgreSQL data models for a 10K+ user product.',
+      'Added Redis caching and query-index changes to reduce high-latency request paths.',
+      'Implemented JWT authentication and integration tests, raising backend test coverage to 85%+ and reducing production defects.',
+    ],
+  },
+  {
+    company: 'Body Flex Gyms',
+    role: 'Full-Stack Software Developer',
+    dates: 'May 2024 — Aug 2024',
+    location: 'Nairobi, Kenya',
+    icon: <FiCreditCard size={20} />,
+    bullets: [
+      'Built payment-processing features for 200+ monthly customers, improving database reliability and billing flow stability.',
+    ],
+  },
+  {
     company: 'Equity Group Foundation',
     role: 'Corporate Analyst Intern',
     dates: 'Apr 2022 — Aug 2022',
+    location: 'Nairobi, Kenya',
     icon: <FiTrendingUp size={20} />,
     bullets: [
-      'Built Python automation scripts that reduced data processing time by 30%.',
-      'Developed SQL queries and Excel macros for financial trend analysis across portfolios.',
-      'Created interactive dashboards for KPI visualization used by senior leadership.',
+      'Automated portfolio reporting and tuned SQL joins and indexing across 100+ daily transactions, replacing manual reconciliation.',
     ],
   },
 ]
@@ -33,7 +65,7 @@ export default function Experience() {
   return (
     <section id="experience" className="py-24 bg-surface/50">
       <div className="max-w-6xl mx-auto px-6" ref={ref}>
-        <motion.div
+        <Motion.motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
@@ -42,13 +74,13 @@ export default function Experience() {
             Experience
           </h2>
           <div className="w-10 h-0.5 bg-primary mt-3 mb-12 rounded-full" />
-        </motion.div>
+        </Motion.motion.div>
 
         <div className="relative pl-12">
           <div className="timeline-line" />
 
           {experiences.map((exp, idx) => (
-            <motion.div
+            <Motion.motion.div
               key={exp.company}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -66,7 +98,9 @@ export default function Experience() {
                       <h3 className="text-lg font-bold text-gray-900">{exp.company}</h3>
                       <span className="text-sm text-gray-400 font-medium">{exp.dates}</span>
                     </div>
-                    <p className="text-primary font-medium text-sm mt-0.5">{exp.role}</p>
+                    <p className="text-primary font-medium text-sm mt-0.5">
+                      {exp.role} · {exp.location}
+                    </p>
                     <ul className="mt-3 space-y-2">
                       {exp.bullets.map((bullet, bIdx) => (
                         <li key={bIdx} className="flex items-start gap-2 text-sm text-gray-500">
@@ -78,7 +112,7 @@ export default function Experience() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </Motion.motion.div>
           ))}
         </div>
       </div>

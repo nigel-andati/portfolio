@@ -1,13 +1,37 @@
-import { motion } from 'framer-motion'
+import * as Motion from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { FiTarget } from 'react-icons/fi'
+import { FiAward, FiCode, FiGlobe, FiTarget, FiUsers } from 'react-icons/fi'
 
 const achievements = [
   {
-    title: 'Open Source Contributor',
-    description: 'Active contributor to multiple open-source projects in the AI/ML ecosystem.',
+    title: 'ColorStack Fellow',
+    description: 'Selected fellow supporting technical growth and community for Black and Latinx technologists.',
     icon: <FiTarget size={22} />,
     accent: 'bg-emerald-50 text-emerald-600',
+  },
+  {
+    title: 'CodePath Fellow',
+    description: 'Fellow in a software engineering community focused on industry-ready technical development.',
+    icon: <FiCode size={22} />,
+    accent: 'bg-blue-50 text-blue-600',
+  },
+  {
+    title: 'Global Ambassador',
+    description: 'Represented Duke Kunshan University as a global ambassador during the 2024-2025 academic year.',
+    icon: <FiGlobe size={22} />,
+    accent: 'bg-amber-50 text-amber-600',
+  },
+  {
+    title: 'Campus Leadership',
+    description: 'Varsity soccer athlete and Secretary of the African & Black Students Association.',
+    icon: <FiUsers size={22} />,
+    accent: 'bg-rose-50 text-rose-600',
+  },
+  {
+    title: 'Nike Sophomore Scouting Summit',
+    description: 'Participant in the 2026 Nike Sophomore Scouting Summit.',
+    icon: <FiAward size={22} />,
+    accent: 'bg-violet-50 text-violet-600',
   },
 ]
 
@@ -17,7 +41,7 @@ export default function Achievements() {
   return (
     <section id="achievements" className="py-24">
       <div className="max-w-6xl mx-auto px-6" ref={ref}>
-        <motion.div
+        <Motion.motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
@@ -26,11 +50,11 @@ export default function Achievements() {
             Extracurricular Achievements
           </h2>
           <div className="w-10 h-0.5 bg-primary mt-3 mb-12 rounded-full" />
-        </motion.div>
+        </Motion.motion.div>
 
-        <div className="grid md:grid-cols-1 gap-6 max-w-md mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {achievements.map((item, idx) => (
-            <motion.div
+            <Motion.motion.div
               key={item.title}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -42,7 +66,7 @@ export default function Achievements() {
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
               <p className="text-sm text-gray-500 leading-relaxed">{item.description}</p>
-            </motion.div>
+            </Motion.motion.div>
           ))}
         </div>
       </div>

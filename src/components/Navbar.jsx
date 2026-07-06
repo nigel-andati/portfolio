@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
+import * as Motion from 'framer-motion'
 
 const navItems = [
   { label: 'About', href: '#about' },
@@ -37,7 +37,7 @@ export default function Navbar() {
   }, [])
 
   return (
-    <motion.nav
+    <Motion.motion.nav
       initial={{ y: -80 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
@@ -93,7 +93,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <motion.div
+        <Motion.motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           className="md:hidden bg-white/95 backdrop-blur-lg border-b border-gray-100 px-6 pb-4"
@@ -116,8 +116,8 @@ export default function Navbar() {
           >
             Resume
           </a>
-        </motion.div>
+        </Motion.motion.div>
       )}
-    </motion.nav>
+    </Motion.motion.nav>
   )
 }

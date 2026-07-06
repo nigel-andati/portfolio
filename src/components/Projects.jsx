@@ -1,30 +1,31 @@
-import { motion } from 'framer-motion'
+import * as Motion from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { FiExternalLink, FiGithub } from 'react-icons/fi'
+import { FiExternalLink } from 'react-icons/fi'
 
 const projects = [
   {
-    title: 'Semantic Book Recommender',
+    title: 'Codewright',
+    year: '2026',
+    description:
+      'Automated bug fixing and feature generation engine using AST analysis to map repositories, plan patches, and validate changes through parallel test orchestration. Achieved 100% patch success rate across 5 repositories.',
+    tags: ['Python', 'LLMs', 'Docker', 'FastAPI', 'GitHub API'],
+    color: 'from-emerald-500/10 to-cyan-500/10',
+    href: 'https://codewright-zeta.vercel.app',
+  },
+  {
+    title: 'Semantic Recommendation Algorithm',
     year: '2024',
     description:
-      'RAG-based discovery engine using OpenAI and vector search. Zero-shot classification and sentiment analysis across 7,000+ books with 30% improvement in recommendation precision.',
+      'RAG recommendation service over 7,000+ books using ChromaDB and LangChain, with tuned chunking and retrieval for more relevant discovery.',
     tags: ['Python', 'LangChain', 'OpenAI', 'ChromaDB'],
     color: 'from-blue-500/10 to-violet-500/10',
   },
   {
-    title: 'Automated Bug Fixing & Feature Generation Engine',
-    year: '2026',
-    description:
-      'Built an autonomous AI agent processing 100K+ token contexts with AST-based repo analysis, improving patch accuracy by ~30% compared to baseline prompting. Implemented parallel benchmarking and test orchestration, evaluating 100+ tasks with automated regression detection and rollback to ensure stable code generation.',
-    tags: ['Python', 'LLMs', 'Docker', 'FastAPI', 'GitHub API'],
-    color: 'from-emerald-500/10 to-cyan-500/10',
-  },
-  {
-    title: 'EchoThread',
+    title: 'LinguaDetect',
     year: '2024',
     description:
-      'Responsive forum with real-time features and custom REST API. Achieved 40% improvement in rendering speeds and 99.9% reliability with 1,000+ concurrent requests.',
-    tags: ['React', 'Node.js', 'Tailwind CSS', 'REST API'],
+      'Browser extension that detects and translates text across 12+ languages using asynchronous batching, caching, and language detection APIs.',
+    tags: ['JavaScript', 'REST APIs', 'franc', 'cld3'],
     color: 'from-amber-500/10 to-rose-500/10',
   },
 ]
@@ -35,7 +36,7 @@ export default function Projects() {
   return (
     <section id="projects" className="py-24 bg-surface/50">
       <div className="max-w-6xl mx-auto px-6" ref={ref}>
-        <motion.div
+        <Motion.motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
@@ -44,11 +45,11 @@ export default function Projects() {
             Projects & Awards
           </h2>
           <div className="w-10 h-0.5 bg-primary mt-3 mb-12 rounded-full" />
-        </motion.div>
+        </Motion.motion.div>
 
         <div className="grid md:grid-cols-3 gap-6">
           {projects.map((project, idx) => (
-            <motion.div
+            <Motion.motion.div
               key={project.title}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -61,9 +62,22 @@ export default function Projects() {
                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
-                  <span className="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded-md">
-                    {project.year}
-                  </span>
+                  <div className="flex items-center gap-2">
+                    {project.href && (
+                      <a
+                        href={project.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-400 hover:text-primary transition-colors"
+                        aria-label={`${project.title} website`}
+                      >
+                        <FiExternalLink size={16} />
+                      </a>
+                    )}
+                    <span className="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded-md">
+                      {project.year}
+                    </span>
+                  </div>
                 </div>
                 <p className="text-sm text-gray-500 leading-relaxed mb-4">
                   {project.description}
@@ -79,7 +93,7 @@ export default function Projects() {
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </Motion.motion.div>
           ))}
         </div>
       </div>

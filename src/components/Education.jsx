@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import * as Motion from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { FiBookOpen } from 'react-icons/fi'
 
@@ -8,7 +8,7 @@ export default function Education() {
   return (
     <section id="education" className="py-24">
       <div className="max-w-6xl mx-auto px-6" ref={ref}>
-        <motion.div
+        <Motion.motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
@@ -17,9 +17,9 @@ export default function Education() {
             Education
           </h2>
           <div className="w-10 h-0.5 bg-primary mt-3 mb-12 rounded-full" />
-        </motion.div>
+        </Motion.motion.div>
 
-        <motion.div
+        <Motion.motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -34,7 +34,10 @@ export default function Education() {
               <p className="text-primary font-medium mt-1">
                 Bachelor of Science, Computer Science
               </p>
-              <p className="text-sm text-gray-400 mt-1">2024 — 2028</p>
+              <p className="text-sm text-gray-400 mt-1">Expected May 2028 · Durham, NC</p>
+              <p className="text-sm text-gray-500 mt-3">
+                Duke Kunshan University study abroad program in Suzhou, China.
+              </p>
               <div className="mt-4">
                 <p className="text-sm font-medium text-gray-500 mb-2">Relevant Coursework:</p>
                 <div className="flex flex-wrap gap-2">
@@ -45,6 +48,7 @@ export default function Education() {
                     'Software Engineering',
                     'Discrete Mathematics',
                     'Linear Algebra',
+                    'Systems',
                   ].map((course) => (
                     <span
                       key={course}
@@ -57,7 +61,7 @@ export default function Education() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </Motion.motion.div>
       </div>
     </section>
   )
