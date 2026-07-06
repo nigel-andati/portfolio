@@ -13,6 +13,13 @@ const projects = [
     href: 'https://codewright-zeta.vercel.app',
   },
   {
+    title: 'LOB-Driven Backtesting Engine',
+    description:
+      'C++20 market microstructure simulator with integer-tick price handling, O(1) cancel/modify lookup, FIFO price levels, deterministic replay, synthetic MBO generation, and latency-delayed strategy execution. Benchmarked 3.85M events/sec throughput, 1µs p99 matching latency, and 2.4x parallel sweep speedup.',
+    tags: ['C++20', 'Market Microstructure'],
+    color: 'from-indigo-500/10 to-fuchsia-500/10',
+  },
+  {
     title: 'Semantic Recommendation Algorithm',
     year: '2024',
     description:
@@ -74,9 +81,11 @@ export default function Projects() {
                         <FiExternalLink size={16} />
                       </a>
                     )}
-                    <span className="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded-md">
-                      {project.year}
-                    </span>
+                    {project.year && (
+                      <span className="text-xs font-medium text-gray-400 bg-gray-50 px-2 py-1 rounded-md">
+                        {project.year}
+                      </span>
+                    )}
                   </div>
                 </div>
                 <p className="text-sm text-gray-500 leading-relaxed mb-4">
