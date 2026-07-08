@@ -19,49 +19,71 @@ export default function Education() {
           <div className="w-10 h-0.5 bg-primary mt-3 mb-12 rounded-full" />
         </Motion.motion.div>
 
-        <Motion.motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="card-hover bg-white rounded-2xl p-8 shadow-sm border border-gray-100 max-w-2xl"
-        >
-          <div className="flex items-start gap-5">
-            <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center">
-              <FiBookOpen className="text-primary" size={24} />
-            </div>
-            <div>
-              <h3 className="text-xl font-bold text-gray-900">Duke University</h3>
-              <p className="text-primary font-medium mt-1">
-                Bachelor of Science, Computer Science
-              </p>
-              <p className="text-sm text-gray-400 mt-1">Expected May 2028 · Durham, NC</p>
-              <p className="text-sm text-gray-500 mt-3">
-                Duke Kunshan University study abroad program in Suzhou, China.
-              </p>
-              <div className="mt-4">
-                <p className="text-sm font-medium text-gray-500 mb-2">Relevant Coursework:</p>
-                <div className="flex flex-wrap gap-2">
-                  {[
-                    'Data Structures & Algorithms',
-                    'Machine Learning',
-                    'Computer Architecture',
-                    'Software Engineering',
-                    'Discrete Mathematics',
-                    'Linear Algebra',
-                    'Systems',
-                  ].map((course) => (
-                    <span
-                      key={course}
-                      className="px-3 py-1 text-xs font-medium rounded-full bg-gray-50 text-gray-600 border border-gray-100"
-                    >
-                      {course}
-                    </span>
-                  ))}
+        <div className="grid md:grid-cols-2 gap-6">
+          <Motion.motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="card-hover bg-white rounded-2xl p-8 shadow-sm border border-gray-100"
+          >
+            <div className="flex items-start gap-5">
+              <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center">
+                <FiBookOpen className="text-primary" size={24} />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-gray-900">Duke University</h3>
+                <p className="text-primary font-medium mt-1">
+                  Bachelor of Science, Computer Science
+                </p>
+                <p className="text-sm text-gray-400 mt-1">Expected May 2028 · Durham, NC</p>
+                <div className="mt-4">
+                  <p className="text-sm font-medium text-gray-500 mb-2">Relevant Coursework:</p>
+                  <div className="flex flex-wrap gap-2">
+                    {[
+                      'Data Structures & Algorithms',
+                      'Machine Learning',
+                      'Computer Architecture',
+                      'Software Engineering',
+                      'Discrete Mathematics',
+                      'Linear Algebra',
+                      'Systems',
+                    ].map((course) => (
+                      <span
+                        key={course}
+                        className="px-3 py-1 text-xs font-medium rounded-full bg-gray-50 text-gray-600 border border-gray-100"
+                      >
+                        {course}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </Motion.motion.div>
+          </Motion.motion.div>
+
+          <Motion.motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="card-hover bg-white rounded-2xl p-8 shadow-sm border border-gray-100"
+          >
+            <div className="flex items-start gap-5">
+              <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center">
+                <FiBookOpen className="text-primary" size={24} />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-gray-900">Duke Kunshan University</h3>
+                <p className="text-primary font-medium mt-1">
+                  Bachelor of Science, Computer Science
+                </p>
+                <p className="text-sm text-gray-400 mt-1">Expected May 2028 · Suzhou, China</p>
+                <p className="text-sm text-gray-500 mt-3">
+                  Dual degree program with Duke University.
+                </p>
+              </div>
+            </div>
+          </Motion.motion.div>
+        </div>
       </div>
     </section>
   )
