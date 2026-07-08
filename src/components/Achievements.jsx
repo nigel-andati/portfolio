@@ -1,6 +1,6 @@
 import * as Motion from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { FiAward, FiCode, FiGlobe, FiTarget, FiUsers } from 'react-icons/fi'
+import { FiAward, FiBriefcase, FiCode, FiGlobe, FiTarget, FiUsers } from 'react-icons/fi'
 
 const achievements = [
   {
@@ -32,6 +32,12 @@ const achievements = [
     description: 'Participant in the 2026 Nike Sophomore Scouting Summit.',
     icon: <FiAward size={22} />,
     accent: 'bg-violet-50 text-violet-600',
+  },
+  {
+    title: 'EA Software Engineering Virtual Experience',
+    description: 'Completed the EA Software Engineering Virtual Experience Program on Forage.',
+    icon: <FiBriefcase size={22} />,
+    accent: 'bg-cyan-50 text-cyan-600',
   },
 ]
 
