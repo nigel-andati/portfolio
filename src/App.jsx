@@ -1,45 +1,31 @@
-import { useEffect, useState } from 'react'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import About from './components/About'
-import Skills from './components/Skills'
-import Education from './components/Education'
-import Experience from './components/Experience'
-import Projects from './components/Projects'
-import Achievements from './components/Achievements'
-import Footer from './components/Footer'
+import Crosshair from './components/Crosshair'
+import Rail from './components/Rail'
+import Masthead from './components/Masthead'
+import Brief from './components/Brief'
+import Ledger from './components/Ledger'
+import Work from './components/Work'
+import Matrix from './components/Matrix'
+import Signals from './components/Signals'
+import Contact from './components/Contact'
 
-function App() {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
-
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setMousePos({ x: e.clientX, y: e.clientY })
-    }
-    window.addEventListener('mousemove', handleMouseMove)
-    return () => window.removeEventListener('mousemove', handleMouseMove)
-  }, [])
-
+export default function App() {
   return (
     <>
-      <div className="gradient-bg" />
-      <div
-        className="cursor-glow hidden md:block"
-        style={{ left: mousePos.x, top: mousePos.y }}
-      />
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Education />
-        <Experience />
-        <Projects />
-        <Achievements />
-      </main>
-      <Footer />
+      <div className="atmos" aria-hidden="true" />
+      <Crosshair />
+      <Rail />
+
+      <div className="shell">
+        <main>
+          <Masthead />
+          <Brief />
+          <Ledger />
+          <Work />
+          <Matrix />
+          <Signals />
+        </main>
+        <Contact />
+      </div>
     </>
   )
 }
-
-export default App
