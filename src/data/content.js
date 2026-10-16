@@ -12,7 +12,11 @@ export const identity = {
   linkedin: 'linkedin.com/in/nigel-andati',
   linkedinUrl: 'https://linkedin.com/in/nigel-andati',
   resume: '/Nigel_Andati_Resume.pdf',
+  title: ['Software Engineer', 'AI/ML', 'Backend & Systems'],
+  tagline: 'Software Engineer · AI/ML · Backend & Systems',
   status: 'Currently shipping at Tech Hub Africa & PM Accelerator',
+  summary:
+    'I build backend services, low-latency systems and AI tooling — FastAPI and PostgreSQL APIs for a 10K+ user product, a C++ matching engine at 3.85M events/sec, and an autonomous coding agent that validates its own patches.',
   lede:
     'I work on the parts of software that have to hold under load — order matching engines measured in microseconds, data models that outlive their first schema, and agents that edit real repositories without breaking them.',
   brief: [
@@ -28,6 +32,7 @@ export const education = {
   location: 'Durham, NC',
 }
 
+// Wrap a fragment in **double asterisks** to render it as a highlighted metric.
 export const experience = [
   {
     org: 'Tech Hub Africa LLC',
@@ -36,8 +41,8 @@ export const experience = [
     location: 'Accra, GH',
     stack: ['WordPress', 'JavaScript', 'REST'],
     bullets: [
-      "Improved page-load performance for AfroEventix's 1,000+ monthly users by shipping 5+ production features and custom REST endpoints.",
-      'Developed AI-assisted tooling that converted stakeholder requests into scoped architecture proposals across 3+ client projects.',
+      "Improved page-load performance for AfroEventix's **1,000+ monthly users**, shipping **5+ production features** and custom REST endpoints.",
+      'Built AI-assisted tooling that turns stakeholder requests into scoped architecture proposals across **3+ client projects**.',
     ],
   },
   {
@@ -47,8 +52,8 @@ export const experience = [
     location: 'Remote / Boston, MA',
     stack: ['React', 'Supabase', 'Gemini', 'Firecrawl', 'OAuth'],
     bullets: [
-      "Owned full-stack engineering for Heiwa, an AI-powered family OS, as the team's sole engineer — architected the technical roadmap end to end.",
-      'Built logistics parsing from flyers and URLs, and owned calendar sync and OAuth integration from design through production.',
+      "**Sole engineer** on Heiwa, an AI-powered family OS — own full-stack engineering and the technical roadmap end to end.",
+      'Built logistics parsing from flyers and URLs; owned calendar sync and OAuth integration from design through production.',
     ],
   },
   {
@@ -58,8 +63,8 @@ export const experience = [
     location: 'Nairobi, KE',
     stack: ['Python', 'FastAPI', 'PostgreSQL', 'Redis', 'JWT'],
     bullets: [
-      'Designed Python/FastAPI REST endpoints and PostgreSQL data models for a 10K+ user product; added Redis caching and query-index optimizations to reduce p95 latency.',
-      'Implemented JWT authentication and integration tests, raising backend test coverage to 85%+ and reducing production defects.',
+      'Designed FastAPI REST endpoints and PostgreSQL data models for a **10K+ user** product; Redis caching and query-index optimizations **reduced p95 latency**.',
+      'Implemented JWT authentication and integration tests, raising backend test coverage to **85%+** and reducing production defects.',
     ],
   },
   {
@@ -69,7 +74,8 @@ export const experience = [
     location: 'Nairobi, KE',
     stack: ['Full-stack', 'Payments', 'SQL'],
     bullets: [
-      'Built and shipped live payment-processing features handling real financial transactions for 200+ monthly customers — early hands-on ownership of a production billing system, improving database reliability and billing-flow stability.',
+      'Built and shipped live payment-processing features handling real financial transactions for **200+ monthly customers**.',
+      'Owned parts of a production billing system early on, improving database reliability and billing-flow stability.',
     ],
   },
 ]
@@ -77,70 +83,76 @@ export const experience = [
 export const projects = [
   {
     index: '001',
+    art: { scheme: 'ember', glyph: 'µs' },
     title: 'Market Microstructure Backtesting Engine',
-    kicker: 'Order-by-order replay · price-time priority',
+    kicker: 'C++20 matching engine for realistic strategy backtests',
     stack: ['C++20', 'Market Microstructure', 'Thread Pool'],
-    body:
-      'Replays order-by-order market data through a custom price-time-priority matching engine, simulating realistic fills, slippage, and market impact for trading strategies. Strategy evaluation is parallelized across independent simulations with a thread pool.',
+    problem:
+      'Strategy backtests are only as trustworthy as their fills — idealized prices hide slippage and market impact.',
+    built:
+      'Replays order-by-order market data through a custom price-time-priority matching engine that simulates fills, slippage and market impact, with strategy evaluation parallelized across a thread pool.',
     metrics: [
-      { label: 'Throughput', value: 3.85, suffix: 'M', unit: 'events/sec', fill: 0.92 },
-      { label: 'p99 match latency', value: 1.0, decimals: 1, suffix: '', unit: 'µs', fill: 0.14, invert: true },
+      { label: 'Throughput', value: '3.85M', unit: 'events/sec' },
+      { label: 'p99 match latency', value: '1.0', unit: 'µs' },
     ],
   },
   {
     index: '002',
+    art: { scheme: 'teal', glyph: '</>' },
     title: 'Codewright',
-    kicker: 'Automated bug fixing & feature generation engine',
+    kicker: 'Autonomous bug-fixing & feature-generation agent',
     stack: ['Python', 'LLMs', 'Docker', 'FastAPI', 'GitHub API'],
     href: 'https://codewright-zeta.vercel.app',
-    body:
-      'An autonomous coding agent that uses AST analysis to map repositories, plan patches, and validate its own changes through parallel test orchestration before anything is proposed as a diff.',
+    problem:
+      'LLM-generated code changes are only useful if they are validated before anyone has to review them.',
+    built:
+      'A coding agent that maps repositories with AST analysis, plans patches, and validates its own changes through parallel test orchestration before proposing a diff.',
     metrics: [
-      { label: 'Patch success rate', value: 100, suffix: '%', unit: 'across 5 repos', fill: 1 },
-      { label: 'Repositories validated', value: 5, suffix: '', unit: 'end to end', fill: 0.5 },
+      { label: 'Patch success rate', value: '100%', unit: 'across 5 repos' },
+      { label: 'Repositories validated', value: '5', unit: 'end to end' },
     ],
   },
   {
     index: '003',
+    art: { scheme: 'violet', glyph: 'RAG' },
     title: 'Semantic Recommendation Algorithm',
-    kicker: 'Retrieval-augmented discovery over a book corpus',
+    kicker: 'RAG-based book discovery service',
     stack: ['Python', 'LangChain', 'OpenAI', 'ChromaDB'],
-    body:
-      'A RAG recommendation service over a 7,000-title corpus, with chunking strategy and retrieval parameters tuned against relevance rather than left at library defaults.',
-    metrics: [
-      { label: 'Corpus size', value: 7000, suffix: '+', unit: 'titles indexed', fill: 0.8 },
-    ],
+    problem: 'Library-default chunking and retrieval settings return loosely relevant recommendations.',
+    built:
+      'A retrieval-augmented recommendation service over a 7,000-title corpus, with chunking strategy and retrieval parameters tuned for relevance.',
+    metrics: [{ label: 'Corpus size', value: '7,000+', unit: 'titles indexed' }],
   },
 ]
 
 export const skills = [
   {
     label: 'Languages',
-    items: ['Python', 'JavaScript', 'Java', 'C++', 'Go', 'SQL', 'HTML/CSS'],
+    items: ['Python', 'Java', 'C++', 'JavaScript', 'TypeScript', 'Go', 'SQL', 'HTML/CSS'],
   },
   {
-    label: 'Frameworks & Libraries',
-    items: ['React', 'Node.js', 'FastAPI', 'Flask', 'Django', 'Express', 'Next.js', 'Redux', 'Vue.js', 'LangChain'],
+    label: 'Backend & Systems',
+    items: ['FastAPI', 'Django', 'Flask', 'Node.js', 'Express', 'REST/GraphQL APIs', 'gRPC', 'WebSockets', 'Microservices', 'System Design'],
   },
   {
-    label: 'Databases & Storage',
-    items: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'Firebase', 'DynamoDB', 'Cassandra', 'SQLite', 'Elasticsearch', 'ChromaDB'],
+    label: 'AI / ML',
+    items: ['LLMs', 'RAG', 'AI Agents', 'LangChain', 'OpenAI', 'Gemini', 'ChromaDB (vector search)', 'Prompt Engineering'],
   },
   {
-    label: 'Cloud & DevOps',
-    items: ['AWS EC2', 'AWS Lambda', 'AWS S3', 'GCP', 'Azure', 'Docker', 'Kubernetes', 'Terraform', 'CI/CD', 'Jenkins', 'Git/GitHub', 'Linux'],
+    label: 'Databases',
+    items: ['PostgreSQL', 'Redis', 'MySQL', 'MongoDB', 'DynamoDB', 'Cassandra', 'SQLite', 'Elasticsearch', 'Supabase', 'Firebase'],
   },
   {
-    label: 'Systems & Architecture',
-    items: ['Microservices', 'REST/GraphQL APIs', 'WebSockets', 'gRPC', 'Kafka', 'RabbitMQ', 'System Design'],
+    label: 'Cloud & Infrastructure',
+    items: ['AWS (EC2, Lambda, S3)', 'GCP', 'Azure', 'Docker', 'Kubernetes', 'Terraform', 'CI/CD', 'Jenkins', 'Kafka', 'RabbitMQ', 'Linux', 'Git/GitHub'],
   },
   {
-    label: 'AI & Data',
-    items: ['LLMs', 'RAG', 'AI Agents', 'Prompt Engineering', 'Generative AI', 'OpenAI'],
+    label: 'Frontend',
+    items: ['React', 'Next.js', 'Redux', 'Vue.js'],
   },
   {
-    label: 'Testing & Tools',
-    items: ['JUnit', 'PyTest', 'Jest', 'Selenium', 'Postman', 'JSON', 'YAML', 'VS Code'],
+    label: 'Testing',
+    items: ['PyTest', 'JUnit', 'Jest', 'Selenium', 'Postman'],
   },
 ]
 
@@ -154,36 +166,119 @@ export const leadership = [
   { name: 'EA Software Engineering', note: 'Virtual Experience Program' },
 ]
 
-// Marquee strip under the masthead — a flat read of the stack.
-export const ticker = [
-  'C++20',
-  'Python',
-  'Go',
-  'TypeScript',
-  'FastAPI',
-  'PostgreSQL',
-  'Redis',
-  'Kafka',
-  'gRPC',
-  'Docker',
-  'Kubernetes',
-  'Terraform',
-  'AWS',
-  'React',
-  'Next.js',
-  'LangChain',
-  'ChromaDB',
-  'Elasticsearch',
-  'Supabase',
-  'PyTest',
+const skillCount = skills.reduce((n, g) => n + g.items.length, 0)
+
+// Every browsable title. `scheme` picks the poster palette, `glyph` the poster art.
+export const pages = {
+  experience: {
+    to: '/experience',
+    title: 'Professional',
+    nav: 'Professional',
+    meta: `${experience.length} roles · 2024 — now`,
+    art: { scheme: 'crimson', glyph: '04' },
+  },
+  projects: {
+    to: '/projects',
+    title: 'Projects',
+    nav: 'Projects',
+    meta: `${projects.length} builds · C++ · Python`,
+    art: { scheme: 'ember', glyph: '{ }' },
+  },
+  skills: {
+    to: '/skills',
+    title: 'Skills',
+    nav: 'Skills',
+    meta: `${skillCount} entries · ${skills.length} groups`,
+    art: { scheme: 'teal', glyph: '57' },
+  },
+  about: {
+    to: '/about',
+    title: 'Education & About',
+    nav: 'About',
+    meta: `${education.school} · ${education.grad.replace('Expected ', '')}`,
+    art: { scheme: 'royal', glyph: 'BS' },
+  },
+  leadership: {
+    to: '/leadership',
+    title: 'Leadership',
+    nav: 'Leadership',
+    meta: `${leadership.length} fellowships & roles`,
+    art: { scheme: 'gold', glyph: '07' },
+  },
+  contact: {
+    to: '/contact',
+    title: 'Hire Me',
+    nav: 'Hire Me',
+    meta: identity.email,
+    art: { scheme: 'crimson', glyph: '@' },
+  },
+  resume: {
+    to: identity.resume,
+    title: 'Résumé',
+    meta: 'PDF · opens in a new tab',
+    art: { scheme: 'bone', glyph: 'CV' },
+  },
+  github: {
+    to: identity.githubUrl,
+    title: 'GitHub',
+    meta: identity.github,
+    art: { scheme: 'slate', glyph: 'gh' },
+  },
+  linkedin: {
+    to: identity.linkedinUrl,
+    title: 'LinkedIn',
+    meta: identity.linkedin,
+    art: { scheme: 'royal', glyph: 'in' },
+  },
+}
+
+export const navPages = ['experience', 'projects', 'skills', 'about', 'contact']
+
+// "Who's watching?" — each profile is a different cut of the same content.
+export const profiles = [
+  {
+    id: 'recruiter',
+    label: 'Recruiter',
+    color: 'blue',
+    primary: { label: 'Résumé', to: identity.resume },
+    secondary: { label: 'LinkedIn', to: identity.linkedinUrl },
+    rows: [
+      { title: 'Top Picks for Recruiter', items: ['experience', 'projects', 'skills', 'about', 'resume', 'contact'] },
+      { title: 'Top 3 Builds', top: true },
+      { title: 'Continue Watching for Recruiter', progress: true, items: ['leadership', 'linkedin', 'github'] },
+    ],
+  },
+  {
+    id: 'engineer',
+    label: 'Engineer',
+    color: 'red',
+    primary: { label: 'Projects', to: '/projects' },
+    secondary: { label: 'GitHub', to: identity.githubUrl },
+    rows: [
+      { title: 'Top 3 Builds', top: true },
+      { title: 'Top Picks for Engineer', items: ['skills', 'experience', 'github', 'resume'] },
+      { title: 'Continue Watching for Engineer', progress: true, items: ['about', 'contact'] },
+    ],
+  },
+  {
+    id: 'curious',
+    label: 'Curious',
+    color: 'yellow',
+    primary: { label: 'About', to: '/about' },
+    secondary: { label: 'LinkedIn', to: identity.linkedinUrl },
+    rows: [
+      { title: 'Top Picks for Curious', items: ['about', 'leadership', 'experience', 'contact'] },
+      { title: 'Top 3 Builds', top: true },
+      { title: 'Continue Watching for Curious', progress: true, items: ['projects', 'linkedin'] },
+    ],
+  },
 ]
 
-export const sections = [
-  { id: 'masthead', label: 'Identity', num: '01' },
-  { id: 'brief', label: 'Brief', num: '02' },
-  { id: 'ledger', label: 'Experience', num: '03' },
-  { id: 'dossier', label: 'Work', num: '04' },
-  { id: 'matrix', label: 'Stack', num: '05' },
-  { id: 'signals', label: 'Off-Hours', num: '06' },
-  { id: 'contact', label: 'Contact', num: '07' },
-]
+// Experience grouped into "seasons" by start year, newest first.
+export const seasons = Object.entries(
+  experience.reduce((acc, job) => {
+    const year = job.span.match(/\d{4}/)[0]
+    ;(acc[year] ||= []).push(job)
+    return acc
+  }, {}),
+).sort(([a], [b]) => b - a)
