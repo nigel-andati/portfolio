@@ -166,119 +166,102 @@ export const leadership = [
   { name: 'EA Software Engineering', note: 'Virtual Experience Program' },
 ]
 
-const skillCount = skills.reduce((n, g) => n + g.items.length, 0)
+// Awards & achievements — same real fellowships, selections and roles,
+// presented the way the reference presents its Awards section.
+export const awards = [
+  { name: 'ColorStack Fellow', note: 'Technical fellowship community' },
+  { name: 'CodePath Fellow', note: 'Technical fellowship community' },
+  { name: 'Nike Sophomore Recruiting Summit', note: 'Selected participant' },
+  { name: 'Global Ambassador', note: 'Duke Kunshan University' },
+  { name: 'Secretary', note: 'African & Black Students Association' },
+  { name: 'Varsity Soccer', note: 'Student athlete' },
+  { name: 'EA Software Engineering Virtual Experience Program', note: 'Completed program' },
+]
 
-// Every browsable title. `scheme` picks the poster palette, `glyph` the poster art.
-export const pages = {
-  experience: {
-    to: '/experience',
-    title: 'Professional',
-    nav: 'Professional',
-    meta: `${experience.length} roles · 2024 — now`,
-    art: { scheme: 'crimson', glyph: '04' },
-  },
-  projects: {
-    to: '/projects',
-    title: 'Projects',
-    nav: 'Projects',
-    meta: `${projects.length} builds · C++ · Python`,
-    art: { scheme: 'ember', glyph: '{ }' },
-  },
-  skills: {
-    to: '/skills',
-    title: 'Skills',
-    nav: 'Skills',
-    meta: `${skillCount} entries · ${skills.length} groups`,
-    art: { scheme: 'teal', glyph: '57' },
-  },
-  about: {
-    to: '/about',
-    title: 'Education & About',
-    nav: 'About',
-    meta: `${education.school} · ${education.grad.replace('Expected ', '')}`,
-    art: { scheme: 'royal', glyph: 'BS' },
-  },
-  leadership: {
-    to: '/leadership',
-    title: 'Leadership',
-    nav: 'Leadership',
-    meta: `${leadership.length} fellowships & roles`,
-    art: { scheme: 'gold', glyph: '07' },
-  },
-  contact: {
-    to: '/contact',
-    title: 'Hire Me',
-    nav: 'Hire Me',
-    meta: identity.email,
-    art: { scheme: 'crimson', glyph: '@' },
-  },
-  resume: {
-    to: identity.resume,
-    title: 'Résumé',
-    meta: 'PDF · opens in a new tab',
-    art: { scheme: 'bone', glyph: 'CV' },
-  },
-  github: {
-    to: identity.githubUrl,
-    title: 'GitHub',
-    meta: identity.github,
-    art: { scheme: 'slate', glyph: 'gh' },
-  },
-  linkedin: {
-    to: identity.linkedinUrl,
-    title: 'LinkedIn',
-    meta: identity.linkedin,
-    art: { scheme: 'royal', glyph: 'in' },
-  },
-}
-
-export const navPages = ['experience', 'projects', 'skills', 'about', 'contact']
-
-// "Who's watching?" — each profile is a different cut of the same content.
-export const profiles = [
+// Engineering interests, each one evidenced by shipped work above —
+// no invented hobbies, just what the projects and roles already show.
+export const interests = [
   {
-    id: 'recruiter',
-    label: 'Recruiter',
-    color: 'blue',
-    primary: { label: 'Résumé', to: identity.resume },
-    secondary: { label: 'LinkedIn', to: identity.linkedinUrl },
-    rows: [
-      { title: 'Top Picks for Recruiter', items: ['experience', 'projects', 'skills', 'about', 'resume', 'contact'] },
-      { title: 'Top 3 Builds', top: true },
-      { title: 'Continue Watching for Recruiter', progress: true, items: ['leadership', 'linkedin', 'github'] },
-    ],
+    name: 'Low-latency systems & market microstructure',
+    note: 'Price-time-priority matching, microsecond measurement, thread-pool parallelism.',
   },
   {
-    id: 'engineer',
-    label: 'Engineer',
-    color: 'red',
-    primary: { label: 'Projects', to: '/projects' },
-    secondary: { label: 'GitHub', to: identity.githubUrl },
-    rows: [
-      { title: 'Top 3 Builds', top: true },
-      { title: 'Top Picks for Engineer', items: ['skills', 'experience', 'github', 'resume'] },
-      { title: 'Continue Watching for Engineer', progress: true, items: ['about', 'contact'] },
-    ],
+    name: 'AI agents that validate their own work',
+    note: 'AST repository mapping, patch planning, parallel test orchestration.',
   },
   {
-    id: 'curious',
-    label: 'Curious',
-    color: 'yellow',
-    primary: { label: 'About', to: '/about' },
-    secondary: { label: 'LinkedIn', to: identity.linkedinUrl },
-    rows: [
-      { title: 'Top Picks for Curious', items: ['about', 'leadership', 'experience', 'contact'] },
-      { title: 'Top 3 Builds', top: true },
-      { title: 'Continue Watching for Curious', progress: true, items: ['projects', 'linkedin'] },
+    name: 'Retrieval quality & evaluation tuning',
+    note: 'Chunking strategy and retrieval-parameter tuning over a 7,000-title corpus.',
+  },
+  {
+    name: 'Production backend ownership',
+    note: 'Billing flows handling real money, FastAPI services for 10K+ users.',
+  },
+]
+
+// Research threads — independent, implementation-led investigation.
+// Nigel has no peer-reviewed publications; nothing here claims one.
+export const research = [
+  {
+    title: 'Realistic fill simulation for strategy backtests',
+    area: 'Market microstructure',
+    body: 'Idealized backtest prices hide slippage and market impact. Implemented a custom C++ price-time-priority matching engine that replays order-by-order market data, measuring 3.85M events/sec throughput at 1.0 µs p99 match latency.',
+  },
+  {
+    title: 'Where autonomous coding breaks down',
+    area: 'AI agents',
+    body: 'LLM-generated changes are only useful when validated before review. Built a coding agent that maps repositories with AST analysis, plans patches, and validates them through parallel test orchestration — 100% patch success across 5 repositories.',
+  },
+  {
+    title: 'Chunking and retrieval tuning for relevance',
+    area: 'Retrieval-augmented generation',
+    body: 'Library-default chunking returns loosely relevant results. Tuned chunking strategy and retrieval parameters for a RAG book-discovery service over a 7,000-title corpus indexed in ChromaDB.',
+  },
+]
+
+// Projects grouped the way the reference groups its builds.
+// Heiwa appears here as well as under Experience: it is real full-stack
+// work shipped as sole/ founding engineer, framed honestly as such.
+export const projectCategories = [
+  {
+    id: 'backend-systems',
+    title: 'Backend & Systems Engineering',
+    items: [projects[0]],
+  },
+  {
+    id: 'ai-ml',
+    title: 'AI & Machine Learning',
+    items: [projects[1], projects[2]],
+  },
+  {
+    id: 'full-stack',
+    title: 'Full-Stack Development',
+    items: [
+      {
+        index: 'pm-heiwa',
+        art: { scheme: 'crimson', glyph: 'H' },
+        title: 'Heiwa — AI-powered family OS',
+        kicker: 'Shipped as sole / founding engineer, PM Accelerator',
+        stack: ['React', 'Supabase', 'Gemini', 'Firecrawl', 'OAuth'],
+        problem: 'Family logistics scattered across flyers, messages and calendars.',
+        built: 'Own full-stack engineering end to end: logistics parsing from flyers and URLs, calendar sync and OAuth integration from design through production.',
+        metrics: [{ label: 'Team', value: 'Sole', unit: 'engineer' }],
+      },
     ],
   },
 ]
 
-// Experience grouped into "seasons" by start year, newest first.
-export const seasons = Object.entries(
-  experience.reduce((acc, job) => {
-    const year = job.span.match(/\d{4}/)[0]
-    ;(acc[year] ||= []).push(job)
-    return acc
-  }, {}),
-).sort(([a], [b]) => b - a)
+// Single-page anchor navigation, mirroring the reference's section order.
+export const sections = [
+  { id: 'summary', label: 'Summary' },
+  { id: 'skills', label: 'Skills' },
+  { id: 'education', label: 'Education' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'research', label: 'Research' },
+  { id: 'experience', label: 'Experience' },
+  { id: 'awards', label: 'Awards' },
+  { id: 'interests', label: 'Interests' },
+  { id: 'contact', label: 'Contact' },
+]
+
+export const skillCount = skills.reduce((n, g) => n + g.items.length, 0)

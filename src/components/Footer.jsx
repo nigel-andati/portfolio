@@ -1,33 +1,29 @@
 import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa6'
-import { identity, navPages, pages } from '../data/content'
-import Link from './Link'
+import { identity, sections } from '../data/content'
 
 export default function Footer() {
   return (
     <footer className="foot">
       <div className="foot-social">
-        <Link to={identity.githubUrl} aria-label="GitHub">
-          <FaGithub />
-        </Link>
-        <Link to={identity.linkedinUrl} aria-label="LinkedIn">
-          <FaLinkedin />
-        </Link>
-        <Link to={`mailto:${identity.email}`} aria-label="Email">
-          <FaEnvelope />
-        </Link>
+        <a href={identity.githubUrl} aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+          <FaGithub aria-hidden="true" />
+        </a>
+        <a href={identity.linkedinUrl} aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+          <FaLinkedin aria-hidden="true" />
+        </a>
+        <a href={`mailto:${identity.email}`} aria-label={`Email ${identity.email}`}>
+          <FaEnvelope aria-hidden="true" />
+        </a>
       </div>
       <ul className="foot-links">
-        {[...navPages, 'leadership', 'resume'].map((k) => (
-          <li key={k}>
-            <Link to={pages[k].to}>{pages[k].nav ?? pages[k].title}</Link>
+        {sections.map((s) => (
+          <li key={s.id}>
+            <a href={`#${s.id}`}>{s.label}</a>
           </li>
         ))}
-        <li>
-          <Link to="/browse">Switch profiles</Link>
-        </li>
       </ul>
       <p className="foot-fine">
-        © {new Date().getFullYear()} {identity.first} {identity.last} · {identity.site}. A personal portfolio styled after a streaming service; not affiliated with Netflix.
+        © {new Date().getFullYear()} {identity.first} {identity.last} · {identity.site}
       </p>
     </footer>
   )
