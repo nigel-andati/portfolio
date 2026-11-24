@@ -35,10 +35,11 @@ export const education = {
     { code: 'COMPSCI 230', name: 'Discrete Mathematics' },
     { code: 'COMPSCI 250', name: 'Computer Architecture' },
     { code: 'COMPSCI 316', name: 'Introduction to Database Systems' },
-    { code: 'COMPSCI 370', name: 'Artificial Intelligence' },
     { code: 'MATH 105', name: 'Calculus' },
     { code: 'MATH 221', name: 'Linear Algebra' },
     { code: 'MATH 206', name: 'Probability & Statistics' },
+    { code: 'CMU 10-605', name: 'Machine Learning with Large Datasets' },
+    { code: 'INFOSCI 102', name: 'Computation and Problem Solving' },
   ],
 }
 
