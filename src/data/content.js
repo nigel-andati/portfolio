@@ -36,9 +36,9 @@ export const education = {
     { code: 'COMPSCI 250', name: 'Computer Architecture' },
     { code: 'COMPSCI 316', name: 'Introduction to Database Systems' },
     { code: 'COMPSCI 370', name: 'Artificial Intelligence' },
-    { code: 'MATH 212', name: 'Multivariable Calculus' },
+    { code: 'MATH 105', name: 'Calculus' },
     { code: 'MATH 221', name: 'Linear Algebra' },
-    { code: 'MATH 230', name: 'Probability' },
+    { code: 'MATH 206', name: 'Probability & Statistics' },
   ],
 }
 
