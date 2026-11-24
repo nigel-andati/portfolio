@@ -30,6 +30,16 @@ export const education = {
   degree: 'B.S. Computer Science',
   grad: 'Expected May 2028',
   location: 'Durham, NC',
+  courses: [
+    { code: 'COMPSCI 201', name: 'Data Structures & Algorithms' },
+    { code: 'COMPSCI 230', name: 'Discrete Mathematics' },
+    { code: 'COMPSCI 250', name: 'Computer Architecture' },
+    { code: 'COMPSCI 316', name: 'Introduction to Database Systems' },
+    { code: 'COMPSCI 370', name: 'Artificial Intelligence' },
+    { code: 'MATH 212', name: 'Multivariable Calculus' },
+    { code: 'MATH 221', name: 'Linear Algebra' },
+    { code: 'MATH 230', name: 'Probability' },
+  ],
 }
 
 // Wrap a fragment in **double asterisks** to render it as a highlighted metric.

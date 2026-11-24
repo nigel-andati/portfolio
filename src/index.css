@@ -32,6 +32,8 @@
   html {
     background: var(--bg);
     scroll-behavior: smooth;
+    /* Scale every rem-based size on the site down one step. */
+    font-size: 93.75%;
   }
   body {
     margin: 0;
@@ -196,10 +198,10 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.7rem 1.4rem;
+  padding: 0.65rem 1.25rem;
   border-radius: 4px;
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 0.875rem;
   transition: background 0.2s var(--ease), transform 0.2s var(--ease);
 }
 .btn:active {
@@ -250,14 +252,14 @@
 }
 .hero-name {
   margin: 0;
-  font-size: clamp(2.75rem, 7vw, 4.5rem);
+  font-size: clamp(2.25rem, 6vw, 3.5rem);
   font-weight: 900;
   letter-spacing: -0.02em;
   line-height: 1.02;
 }
 .hero-tagline {
   margin: 0.75rem 0 0;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--text-dim);
 }
@@ -265,6 +267,7 @@
   margin: 1rem 0 0;
   max-width: 44rem;
   color: var(--text-dim);
+  font-size: 0.95rem;
   line-height: 1.65;
 }
 .hero-social {
@@ -333,17 +336,19 @@
 }
 .section-title {
   margin: 0;
-  font-size: clamp(1.6rem, 3.5vw, 2.25rem);
+  font-size: clamp(1.35rem, 3vw, 1.85rem);
   font-weight: 800;
   letter-spacing: -0.01em;
 }
 .section-intro {
   margin: 0.75rem 0 0;
   color: var(--text-dim);
+  font-size: 0.95rem;
   line-height: 1.6;
 }
 .body {
   color: #d6d6d6;
+  font-size: 0.95rem;
   line-height: 1.7;
   margin: 1rem 0 0;
 }
@@ -362,6 +367,7 @@
 }
 .note {
   color: var(--text-dim);
+  font-size: 0.875rem;
   margin: 1.5rem 0 0;
 }
 
@@ -392,7 +398,7 @@
 }
 .category-title {
   margin: 0;
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 700;
 }
 .count {
@@ -416,13 +422,13 @@
 }
 .project-title {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 700;
 }
 .project-kicker {
   margin: 0.25rem 0 0;
   color: var(--text-dim);
-  font-size: 0.92rem;
+  font-size: 0.875rem;
 }
 .project-link {
   flex-shrink: 0;
@@ -444,7 +450,7 @@
 .project-line {
   margin: 0.75rem 0 0;
   color: #d6d6d6;
-  font-size: 0.95rem;
+  font-size: 0.875rem;
   line-height: 1.6;
 }
 .project-line strong {
@@ -467,7 +473,7 @@
 }
 .metrics dd {
   margin: 0.2rem 0 0;
-  font-size: 0.95rem;
+  font-size: 0.875rem;
   color: var(--text-dim);
 }
 .metrics dd strong,
@@ -517,7 +523,7 @@
 }
 .skill-label {
   margin: 0 0 0.6rem;
-  font-size: 0.95rem;
+  font-size: 0.875rem;
   font-weight: 700;
 }
 .skill-group .tags {
@@ -525,16 +531,47 @@
 }
 .edu-school {
   margin: 0;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 .edu-degree {
   margin: 0.3rem 0 0;
+  font-size: 0.95rem;
   font-weight: 600;
 }
 .edu-meta {
   margin: 0.4rem 0 0;
   color: var(--text-dim);
-  font-size: 0.92rem;
+  font-size: 0.875rem;
+}
+.courses-label {
+  margin: 1.25rem 0 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #fff;
+}
+.courses {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.35rem;
+}
+.courses li {
+  position: relative;
+  padding-left: 1rem;
+  font-size: 0.875rem;
+  color: var(--text-dim);
+}
+.courses li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--red);
+  font-weight: 900;
+}
+.courses strong {
+  color: #fff;
+  font-weight: 700;
 }
 
 /* ---------- research / jobs / awards ---------- */
@@ -562,12 +599,12 @@
 }
 .job-org {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 .job-role {
   margin: 0.2rem 0 0;
   color: var(--text-dim);
-  font-size: 0.92rem;
+  font-size: 0.875rem;
 }
 .job-when {
   margin: 0;
@@ -583,7 +620,7 @@
   margin: 0.9rem 0 0;
   padding-left: 1.1rem;
   color: #d6d6d6;
-  font-size: 0.95rem;
+  font-size: 0.875rem;
   line-height: 1.65;
   display: grid;
   gap: 0.45rem;
@@ -611,7 +648,7 @@
   padding: 0.85rem 1.1rem;
   background: var(--card);
   border-bottom: 1px solid var(--line);
-  font-size: 0.95rem;
+  font-size: 0.875rem;
 }
 .award-list li:last-child {
   border-bottom: 0;
@@ -649,6 +686,7 @@
   display: grid;
   gap: 0.7rem;
   color: var(--text-dim);
+  font-size: 0.875rem;
 }
 .contact-list li {
   display: flex;

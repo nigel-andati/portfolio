@@ -194,6 +194,16 @@ export default function App() {
                 </span>
               </p>
               <p className="body">Focus areas follow the work below: backend systems, low-latency simulation, and AI infrastructure.</p>
+              <p className="courses-label">Relevant courses:</p>
+              <ul className="courses">
+                {education.courses.map((c) => (
+                  <li key={c.code}>
+                    <strong>{c.code}</strong>
+                    <span aria-hidden="true"> — </span>
+                    <span>{c.name}</span>
+                  </li>
+                ))}
+              </ul>
             </article>
           </Section>
 
